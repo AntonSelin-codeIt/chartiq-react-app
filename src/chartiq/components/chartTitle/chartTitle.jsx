@@ -17,9 +17,17 @@ export default function ChartTitle({
 	}
 
 	const prevAmount = usePrevious(config);
-    useEffect(() => {
-				setUpFlag(prevAmount && (prevAmount.price > config.price));
-    }, [config])
+	useEffect(() => {
+		setUpFlag(prevAmount && (prevAmount.price > config.price));
+	}, [config])
+
+	// It Will be used when the context will be available
+	// function getEngine(el) {
+	// 	const uiContext = el.closest('cq-context').CIQ.UI.context;
+	// 	const { stx } = uiContext;
+
+	// 	return { uiContext, stx };
+	// }
 
   return (
     <div>
