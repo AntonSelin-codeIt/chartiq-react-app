@@ -9,12 +9,16 @@
 	font-size: 12px;
 	text-align: left;
 	z-index: 100;
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	justify-self: center;
+	padding: 10px;
+	border-radius: 5px;
+	min-width: 160px;
 
   &_symbol {
     font-size:35px;
+		margin-right: 5px;
   }
 
 	&_price {
@@ -56,5 +60,10 @@
 		&_value {
 			margin-right: 3px;
 		}
+	}
+
+	&.dark {
+		background: #333;
+		color: #fff;
 	}
 }

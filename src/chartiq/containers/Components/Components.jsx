@@ -1,6 +1,10 @@
 import React from "react";
 import { ChartTitle } from "../../components/index";
-import { fakeTitleData } from "./MockData";
+import {
+	fakeTitleData,
+	fakeTitleConfig,
+	fakeTitleConfigLight,
+} from "./MockData";
 
 export default class ComponentsDemo extends React.Component {
 	constructor(props) {
@@ -8,7 +12,7 @@ export default class ComponentsDemo extends React.Component {
 
 		this.state = {
 			count: 0,
-			config: fakeTitleData[0],
+			data: fakeTitleData[0],
 		}
 	}
 
@@ -21,9 +25,9 @@ export default class ComponentsDemo extends React.Component {
 				this.setState({ count: 0 });
 			}
 
-			this.setState({ config: fakeTitleData[this.state.count] });
+			this.setState({ data: fakeTitleData[this.state.count] });
 			this.setState({ count: this.state.count + 1 });
-		}, 1500);
+		}, 1000);
 	}
 
 	render() {
@@ -32,7 +36,14 @@ export default class ComponentsDemo extends React.Component {
 				<h1>Chart Componets</h1>
 				<section>
 					<h3>Title</h3>
-					<ChartTitle config={this.state.config} />
+					<ChartTitle
+						config={fakeTitleConfig}
+						data={this.state.data}
+					/>
+					<ChartTitle
+						config={fakeTitleConfigLight}
+						data={this.state.data}
+					/>
 				</section>
 			</div>
 		);
