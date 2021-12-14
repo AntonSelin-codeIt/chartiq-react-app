@@ -19,8 +19,6 @@ export default class ComponentsDemo extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log('ChartContext', ChartContext);
-
 		// Mock fake data
 		setInterval(() => {
 			if (this.state.count === fakeTitleData.length) {
