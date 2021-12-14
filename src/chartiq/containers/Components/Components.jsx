@@ -1,10 +1,12 @@
 import React from "react";
+import "./Components.scss";
 import { ChartTitle } from "../../components/index";
 import {
 	fakeTitleData,
 	fakeTitleConfig,
 	fakeTitleConfigLight,
 } from "./MockData";
+import { ChartContext } from '../../contexts/index';
 
 export default class ComponentsDemo extends React.Component {
 	constructor(props) {
@@ -17,11 +19,11 @@ export default class ComponentsDemo extends React.Component {
 	}
 
 	componentDidMount() {
+		console.log('ChartContext', ChartContext);
+
 		// Mock fake data
-		// Insted of these should use chartEngine
 		setInterval(() => {
-			if (this.state.count === 3) {
-				this.state.count = 0;
+			if (this.state.count === fakeTitleData.length) {
 				this.setState({ count: 0 });
 			}
 
@@ -34,17 +36,20 @@ export default class ComponentsDemo extends React.Component {
 		return (
 			<div style={{ margin: "20px" }}>
 				<h1>Chart Componets</h1>
-				<section>
-					<h3>Title</h3>
-					<ChartTitle
-						config={fakeTitleConfig}
-						data={this.state.data}
-					/>
-					<ChartTitle
-						config={fakeTitleConfigLight}
-						data={this.state.data}
-					/>
-				</section>
+
+				<h2>Title</h2>
+					<section>
+						<ChartContext.Provider value={fakeTitleConfigLight}>
+								<ChartTitle
+									data={this.state.data}
+								/>
+						</ChartContext.Provider>
+						<ChartContext.Provider value={fakeTitleConfig}>
+								<ChartTitle
+									data={this.state.data}
+								/>
+						</ChartContext.Provider>
+					</section>
 			</div>
 		);
 	}

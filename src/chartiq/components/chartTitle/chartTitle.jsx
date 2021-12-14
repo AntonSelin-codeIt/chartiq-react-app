@@ -2,13 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import "./chartTitle.scss";
 
+import { ChartContext } from '../../contexts/index';
+
 export default function ChartTitle({
-	config,
 	data,
 }) {
 
 	const { symbol, price, changedValue, changedValuePtc } = data;
-	const { theme } = config;
+	const { theme } = React.useContext(ChartContext);
   const [upFlag, setUpFlag] = useState(false);
 
 	function usePrevious(value) {
@@ -51,8 +52,5 @@ ChartTitle.propTypes = {
     price: PropTypes.number.isRequired,
     changedValue: PropTypes.number.isRequired,
     changedValuePtc: PropTypes.string.isRequired,
-  }),
-	config: PropTypes.shape({
-    theme: PropTypes.string.isRequired,
   }),
 }
