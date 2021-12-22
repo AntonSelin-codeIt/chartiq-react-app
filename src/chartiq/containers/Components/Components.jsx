@@ -1,33 +1,12 @@
 import React from "react";
 import "./Components.scss";
 import { ChartTitle } from "../../components/index";
-import {
-	fakeTitleData,
-	fakeTitleConfig,
-	fakeTitleConfigLight,
-} from "./MockData";
-import { ChartContext } from '../../contexts/index';
+import { ChartContextComponent } from '../../contexts/index';
 
 export default class ComponentsDemo extends React.Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			count: 0,
-			data: fakeTitleData[0],
-		}
-	}
-
-	componentDidMount() {
-		// Mock fake data
-		setInterval(() => {
-			if (this.state.count === fakeTitleData.length) {
-				this.setState({ count: 0 });
-			}
-
-			this.setState({ data: fakeTitleData[this.state.count] });
-			this.setState({ count: this.state.count + 1 });
-		}, 1000);
+		this.container = React.createRef();
 	}
 
 	render() {
@@ -37,16 +16,13 @@ export default class ComponentsDemo extends React.Component {
 
 				<h2>Title</h2>
 					<section>
-						<ChartContext.Provider value={fakeTitleConfigLight}>
-								<ChartTitle
-									data={this.state.data}
-								/>
-						</ChartContext.Provider>
-						<ChartContext.Provider value={fakeTitleConfig}>
-								<ChartTitle
-									data={this.state.data}
-								/>
-						</ChartContext.Provider>
+						{/* <cq-context>
+							<ChartContextComponent>
+								<ChartTitle />
+							</ChartContextComponent>
+
+							{this.props.children || <ChartTemplate />}
+						</cq-context> */}
 					</section>
 			</div>
 		);

@@ -3,7 +3,7 @@
 	font-weight: 700;
 	float:none;
 	margin: 10px 10px;
-	color: #333;
+	color: #fff;
 	padding: 0 10px 0 10px;
 	line-height: 22px;
 	font-size: 12px;
@@ -17,8 +17,9 @@
 	min-width: 170px;
 
   &_symbol {
-    font-size:35px;
+    font-size:28px;
 		margin-right: 5px;
+		letter-spacing: -2px;
   }
 
 	&_price {
@@ -31,6 +32,14 @@
 	&_current_price {
 		line-height: 13px;
 		font-weight: 400;
+
+		&.up {
+			color: #85c730;
+		}
+
+		&.down {
+			color: #ff002a;
+		}
 	}
 
 	&_change {
@@ -63,7 +72,7 @@
 	}
 
 	&.dark {
-		background: #333;
+		background: #1c2a35;
 		color: #fff;
 	}
 }
