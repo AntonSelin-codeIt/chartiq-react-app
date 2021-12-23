@@ -14,7 +14,8 @@ import {
 	// Enable TermStructure
 	// TermStructure,
 	CustomChart,
-	HelloWorld
+	HelloWorld,
+	ComponentsDemo,
 } from "./chartiq";
 
 // Enable the following import if the channelSubscribe reference or the call to CIQ.simulateL2 in the chartInitialized reference are required.
@@ -89,6 +90,7 @@ if (el) {
 				></Route> */}
 			<Route path='/custom-chart' component={CustomChart}></Route>
 			<Route path='/hello-world' component={HelloWorld}></Route>
+			<Route path='/components' component={ComponentsDemo}></Route>
 		</Router>,
 		el
 	);

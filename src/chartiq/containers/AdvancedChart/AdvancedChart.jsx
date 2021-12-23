@@ -2,6 +2,10 @@ import React from "react";
 import { CIQ } from "chartiq/js/componentUI";
 
 import ChartTemplate from "./Template";
+
+import { ChartContextComponent } from '../../contexts/index';
+import { ChartTitle } from "../../components/index";
+
 // Base styles required by the library to render color correctly.
 // If for some reason you are not including base-styles.css add these here.
 //import 'chartiq/css/stx-chart.css'; // Chart API
@@ -51,6 +55,7 @@ export default class AdvancedChart extends React.Component {
 		// Destroy the ChartEngine instance when unloading the component.
 		// This will stop internal processes such as quotefeed polling.
 		const { stx } = this.state;
+
 		stx.destroy();
 		stx.draw = () => {};
 	}
@@ -63,6 +68,12 @@ export default class AdvancedChart extends React.Component {
 	render() {
 		return (
 			<cq-context ref={this.container}>
+
+				<ChartContextComponent>
+					<ChartTitle />
+				</ChartContextComponent>
+
+
 				{this.props.children || <ChartTemplate />}
 			</cq-context>
 		);

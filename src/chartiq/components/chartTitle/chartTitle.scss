@@ -1,0 +1,78 @@
+.cq_title {
+	position:relative;
+	font-weight: 700;
+	float:none;
+	margin: 10px 10px;
+	color: #fff;
+	padding: 0 10px 0 10px;
+	line-height: 22px;
+	font-size: 12px;
+	text-align: left;
+	z-index: 100;
+	display: inline-flex;
+	align-items: center;
+	justify-self: center;
+	padding: 10px;
+	border-radius: 5px;
+	min-width: 170px;
+
+  &_symbol {
+    font-size:28px;
+		margin-right: 5px;
+		letter-spacing: -2px;
+  }
+
+	&_price {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-self: center;
+	}
+
+	&_current_price {
+		line-height: 13px;
+		font-weight: 400;
+
+		&.up {
+			color: #85c730;
+		}
+
+		&.down {
+			color: #ff002a;
+		}
+	}
+
+	&_change {
+		display: flex;
+		align-items: center;
+		justify-self: center;
+		font-size: 11px;
+		line-height: 13px;
+		font-family: "Roboto", sans-serif;
+		color: #8e959a;
+
+		&_arrow {
+			display: block;
+			height: 12px;
+			width: 12px;
+			background-image: url(../../common/img/stx-sprite-ui.svg);
+
+			&.up {
+				background-position: -683px -31px;
+			}
+
+			&.down {
+				background-position: -633px -31px;
+			}
+		}
+
+		&_value {
+			margin-right: 3px;
+		}
+	}
+
+	&.dark {
+		background: #1c2a35;
+		color: #fff;
+	}
+}

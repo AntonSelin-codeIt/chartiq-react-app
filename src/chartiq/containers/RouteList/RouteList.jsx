@@ -91,6 +91,12 @@ export default class RouteList extends React.Component {
               API in React.
             </p>
           </li>
+          <li>
+            <h3><Link to="components">Components</Link></h3>
+            <p>
+              Components list
+            </p>
+          </li>
         </ul>
       </span>
 		);

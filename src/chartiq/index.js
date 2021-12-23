@@ -6,3 +6,4 @@ export { default as MultiChart } from './containers/MultiChart/MultiChart';
 // export { default as TermStructure } from './containers/TermStructure';
 export { default as CustomChart } from './containers/CustomChart/CustomChart';
 export { default as HelloWorld } from './containers/HelloWorld/HelloWorld';
+export { default as ComponentsDemo } from './containers/Components/Components';
